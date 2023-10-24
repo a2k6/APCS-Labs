@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class LotteryRevisitedClient {
    public static void main(String[] args) {
       //Create the customer's lotto ticket. These numbers should be chosen by the customer and hard coded in.

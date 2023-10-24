@@ -5,14 +5,12 @@ public class LotteryRevisited {
     //constructors
     /*No parameter constructor. Initialize the lottoNumbers randomly. Numbers cannot be chosen more than once. There
     * should be a trailing space*/
-    public LotteryRevisited()
-    {
+    public LotteryRevisited() {
         lottoNumbers = "";
         Integer newNum = (int)(Math.random()*51) + 10;
         lottoNumbers += newNum + " ";
-        int count = 1;
-        while(count < 6)
-        {
+        int count = 0;
+        while(count < 5) {
             newNum = (int)(Math.random()*51)+10;
             String newNumStr = newNum.toString();
             if(lottoNumbers.indexOf(newNumStr) == -1)
@@ -24,29 +22,25 @@ public class LotteryRevisited {
     }
     /*Constructor with parameters. Initialize customers' lotto ticket according to the numbers they choose.Numbers cannot be chosen more than once. There
      * should be a trailing space*/
-    public LotteryRevisited(int num1, int num2, int num3, int num4, int num5, int num6)
-    {
+    public LotteryRevisited(int num1, int num2, int num3, int num4, int num5, int num6) {
         lottoNumbers = num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5 + " " + num6 + " ";
     }
 
     //getter method
     //Create the getter method to make sure lottoNumbers is accessible outside of the LotteryRevisited class.
-    public String getLottoNumbers()
-    {
+    public String getLottoNumbers() {
         return lottoNumbers;
     }
 
     //mutator methods
     /*Check to see if two LotteryRevisited objects are the equal. The method should take a LotteryRevisited object in as a parameter
     and should return true if all of the customer's lotto numbers are included in the winning number (or vice versa), false if they do not.*/
-    public boolean equals(LotteryRevisited other)
-    {
+    public boolean equals(LotteryRevisited other) {
         this.lottoNumbers.equals(other.lottoNumbers);
         int spaceIndex = other.lottoNumbers.indexOf(" ");
         int startingIndex = 0;
         String currentNum = (other.lottoNumbers).substring(startingIndex, spaceIndex);
-        for(int i = 1; i <= 6; i++)
-        {
+        for(int i = 1; i <= 6; i++) {
             if((this.lottoNumbers).indexOf(currentNum) == -1)
                 return false;
             else {
