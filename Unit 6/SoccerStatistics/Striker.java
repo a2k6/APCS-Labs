@@ -55,23 +55,23 @@ public class Striker{
     public double goalPercentage(){
         int temp = 0, tempG = 0;
         for(int i = 0; i < goalsAttempted.length; i++){
-            temp += goalsAttempted[i];
+            tempG += goalsAttempted[i];
         }
         for(int i = 0; i < goalsMade.length; i++){
-            tempG += goalsMade[i];
+            temp += goalsMade[i];
         }
-        return ((double)temp * (double)tempG);
+        return ((double)temp / (double)tempG);
     }
 
     //Calculates the overall big chances percentage (big chances completed out of total attempts).
     public double bigChancePercentage(){
         int temp = 0, tempG = 0;
         for(int i = 0; i < bigChanceAttempt.length; i++){
-            temp += bigChanceAttempt[i];
+            tempG += bigChanceAttempt[i];
         }
         for(int i = 0; i < bigChanceMade.length; i++){
-            tempG += bigChanceMade[i];
+            temp += bigChanceMade[i];
         }
-        return ((double)temp * (double)tempG);
+        return ((double)temp / (double)tempG);
     }
 }

@@ -43,7 +43,7 @@ public class Defender {
         for(int i = 0; i < interceptions.length; i ++){
             temp += interceptions[i];
         }
-        return (double)temp * interceptions.length;
+        return (double)temp / interceptions.length;
     }
 
     //Calculates the average ball recoveries per game.
@@ -52,6 +52,6 @@ public class Defender {
         for(int i = 0; i < ballRecoveries.length; i ++){
             temp += ballRecoveries[i];
         }
-        return (double)temp * ballRecoveries.length;
+        return (double)temp / ballRecoveries.length;
     }
 }

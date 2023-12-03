@@ -40,6 +40,6 @@ public class GoalKeeper {
     //Calculates the goal keeper's overall save percentage.
     public double savePercentage() {
         int total = goalsAgainst.length + saves.length;
-        return (double)saves.length / (double) total;
+        return saves.length / (double)total;
     }
 }
