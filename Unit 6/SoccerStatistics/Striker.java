@@ -10,37 +10,32 @@ public class Striker{
     public Striker(){
         System.out.println("Please enter the name of the striker");
         name = in.nextLine();
-        System.out.println("Please enter the number of goals attempted per game. Enter a '-1' to exit");
-        int temp = in.nextInt();
-        int count = 0;
-        while (temp != -1){
-            goalsAttempted[count] = temp;
-            count++;
+        System.out.println("Please enter the number of games the striker has played in.");
+        int numGames = in.nextInt();
+        goalsMade = new int[numGames];
+        goalsAttempted = new int[numGames];
+        bigChanceMade = new int[numGames];
+        bigChanceAttempt = new int[numGames];
+        int temp;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of goals scored per game.");
             temp = in.nextInt();
+            goalsMade[i] = temp;
         }
-        System.out.println("Please enter the number of goals scored per game. Enter a '-1' to exit");
-        temp = in.nextInt();
-        count = 0;
-        while (temp != -1){
-            goalsMade[count] = temp;
-            count++;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of goals attempted per game.");
             temp = in.nextInt();
+            goalsAttempted[i] = temp;
         }
-        System.out.println("Please enter the number of big chance attempts made per game. Enter a '-1' to exit");
-        temp = in.nextInt();
-        count = 0;
-        while (temp != -1){
-            bigChanceAttempt[count] = temp;
-            count++;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of big chance attempts made per game.");
             temp = in.nextInt();
+            bigChanceAttempt[i] = temp;
         }
-        System.out.println("Please enter the number of big chances made per game. Enter a '-1' to exit");
-        temp = in.nextInt();
-        count = 0;
-        while (temp != -1){
-            bigChanceMade[count] = temp;
-            count++;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of big chances made per game.");
             temp = in.nextInt();
+            bigChanceAttempt[i] = temp;
         }
     }
 
@@ -65,7 +60,7 @@ public class Striker{
         for(int i = 0; i < goalsMade.length; i++){
             tempG += goalsMade[i];
         }
-        return ((double)temp * (double)tempG) * 100;
+        return ((double)temp * (double)tempG);
     }
 
     //Calculates the overall big chances percentage (big chances completed out of total attempts).
@@ -77,6 +72,6 @@ public class Striker{
         for(int i = 0; i < bigChanceMade.length; i++){
             tempG += bigChanceMade[i];
         }
-        return ((double)temp * (double)tempG) * 100;
+        return ((double)temp * (double)tempG);
     }
 }

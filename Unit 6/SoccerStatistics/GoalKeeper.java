@@ -9,21 +9,20 @@ public class GoalKeeper {
     public GoalKeeper(){
         System.out.println("Please enter the name of the goalkeeper");
         name = in.nextLine();
-        System.out.println("Please enter the number of goals made on the goalkeeper per game. Enter '-1' to exit");
-        int temp = in.nextInt();
-        int count = 0;
-        while (temp != -1){
-            goalsAgainst[count] = temp;
-            count++;
+        System.out.println("Please enter the number of games the goalkeeper has played in.");
+        int numGames = in.nextInt();
+        goalsAgainst = new int[numGames];
+        saves = new int[numGames];
+        int temp;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of goals made on the goalkeeper per game.");
             temp = in.nextInt();
+            goalsAgainst[i] = temp;
         }
-        System.out.println("Please enter the number of saves per game. Enter '-1' to exit");
-        temp = in.nextInt();
-        count = 0;
-        while (temp != -1){
-            saves[count] = temp;
-            count++;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of goals made on the goalkeeper per game.");
             temp = in.nextInt();
+            saves[i] = temp;
         }
     }
 

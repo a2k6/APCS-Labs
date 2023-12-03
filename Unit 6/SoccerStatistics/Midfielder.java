@@ -9,21 +9,20 @@ public class Midfielder{
     public Midfielder(){
         System.out.println("Please enter the name of the midfielder");
         name = in.nextLine();
-        System.out.println("Please enter the number of interceptions per game. Enter '-1' to exit");
-        int temp = in.nextInt();
-        int count = 0;
-        while (temp != -1){
-            interceptions[count] = temp;
-            count++;
+        System.out.println("Please enter the number of games the midfielder has played in.");
+        int numGames = in.nextInt();
+        interceptions = new int[numGames];
+        ballRecoveries = new int[numGames];
+        int temp;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of interceptions per game.");
             temp = in.nextInt();
+            interceptions[i] = temp;
         }
-        System.out.println("Please enter the number of ball recoveries per game. Enter '-1' to exit");
-        temp = in.nextInt();
-        count = 0;
-        while (temp != -1){
-            ballRecoveries[count] = temp;
-            count++;
+        for(int i = 0; i < numGames; i++){
+            System.out.println("Please enter the number of ball recoveries per game.");
             temp = in.nextInt();
+            ballRecoveries[i] = temp;
         }
     }
 
