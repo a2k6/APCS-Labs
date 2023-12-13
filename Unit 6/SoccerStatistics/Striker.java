@@ -1,3 +1,4 @@
+//Code by Adrian Panezic, Jack Pink, Alex Sogas, Michael BG
 import java.util.Scanner;
 public class Striker{
     private int[] bigChanceAttempt;
@@ -35,7 +36,7 @@ public class Striker{
         for(int i = 0; i < numGames; i++){
             System.out.println("Please enter the number of big chances made per game.");
             temp = in.nextInt();
-            bigChanceAttempt[i] = temp;
+            bigChanceMade[i] = temp;
         }
     }
 

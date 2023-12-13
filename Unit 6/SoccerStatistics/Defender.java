@@ -1,3 +1,4 @@
+//Code by Adrian Panezic
 import java.util.Scanner;
 public class Defender {
 
@@ -9,7 +10,7 @@ public class Defender {
     public Defender(){
         System.out.println("Please enter the name of the defender");
         name = in.nextLine();
-        System.out.println("Please enter the number of games the midfielder has played in.");
+        System.out.println("Please enter the number of games the defender has played in.");
         int numGames = in.nextInt();
         interceptions = new int[numGames];
         ballRecoveries = new int[numGames];

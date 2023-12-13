@@ -1,3 +1,4 @@
+//Code by Adrian Panezic
 import java.util.Scanner;
 public class GoalKeeper {
 
