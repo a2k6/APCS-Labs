@@ -1,6 +1,7 @@
 import java.io.FilterOutputStream;
 import java.util.*;
-public class Student {
+public class Student 
+{
     // Student instance variables
     Scanner in = new Scanner(System.in);
     private String firstName;
@@ -10,7 +11,8 @@ public class Student {
     private int graduationYear;
 
     // Student constructors
-    public Student() {
+    public Student() 
+    {
         System.out.print("Please enter the student's first name: ");
         //Hint 1
             firstName = in.nextLine();
@@ -42,7 +44,8 @@ public class Student {
         idNum = Integer.parseInt(in.nextLine());
     }
 
-    public Student(String fName, String lName, int idNumber, char[] grades, int gradYear) {
+    public Student(String fName, String lName, int idNumber, char[] grades, int gradYear) 
+    {
         //Initialize the instance variables to the values in the parameters.
         firstName = fName;
         lastName = lName;
@@ -51,19 +54,24 @@ public class Student {
         gpa = calcGpa(grades);
     }
     //getter methods
-    public String getFirstName(){
+    public String getFirstName()
+    {
         return firstName;
     }
-    public String getLastName(){
+    public String getLastName()
+    {
         return lastName;
     }
-    public int getID(){
+    public int getID()
+    {
         return idNum;
     }
-    public int getGradYear(){
+    public int getGradYear()
+    {
         return graduationYear;
     }
-    public double getGPA(){
+    public double getGPA()
+    {
         return gpa;
     }
     /** Returns the value representing a student's gpa given an array of chars
