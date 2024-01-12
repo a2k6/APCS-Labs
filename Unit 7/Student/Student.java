@@ -70,7 +70,7 @@ public class Student
     {
         return graduationYear;
     }
-    public double getGPA()
+    public double getGpa()
     {
         return gpa;
     }
