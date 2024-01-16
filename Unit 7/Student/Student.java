@@ -1,7 +1,6 @@
-import java.io.FilterOutputStream;
+//Code by Adrian Panezic
 import java.util.*;
-public class Student 
-{
+public class Student {
     // Student instance variables
     Scanner in = new Scanner(System.in);
     private String firstName;
@@ -11,8 +10,7 @@ public class Student
     private int graduationYear;
 
     // Student constructors
-    public Student() 
-    {
+    public Student() {
         System.out.print("Please enter the student's first name: ");
         //Hint 1
             firstName = in.nextLine();
@@ -38,40 +36,34 @@ public class Student
                 x++;
             }
         }
-        gpa = calcGpa(gradesList);
+        gpa = calcGPA(gradesList);
         System.out.print("Please enter the students' ID number: ");
         //Hint 1
         idNum = Integer.parseInt(in.nextLine());
     }
 
-    public Student(String fName, String lName, int idNumber, char[] grades, int gradYear) 
-    {
+    public Student(String fName, String lName, int idNumber, char[] grades, int gradYear) {
         //Initialize the instance variables to the values in the parameters.
         firstName = fName;
         lastName = lName;
         idNum = idNumber;
         graduationYear = gradYear;
-        gpa = calcGpa(grades);
+        gpa = calcGPA(grades);
     }
     //getter methods
-    public String getFirstName()
-    {
+    public String getFirstName(){
         return firstName;
     }
-    public String getLastName()
-    {
+    public String getLastName(){
         return lastName;
     }
-    public int getID()
-    {
+    public int getID(){
         return idNum;
     }
-    public int getGradYear()
-    {
+    public int getGradYear(){
         return graduationYear;
     }
-    public double getGpa()
-    {
+    public double getGpa(){
         return gpa;
     }
     /** Returns the value representing a student's gpa given an array of chars
@@ -81,25 +73,23 @@ public class Student
      * and the program should exit immediately.
      * Precondition: The array grades contains only chars.
      * Postcondition: grades is unchanged.*/
-    private double calcGpa(char[] grades) {
-        double gpa = 0;
+    private double calcGPA(char[] grades) {
+        double g = 0;
         for(int i = 0; i < grades.length; i++){
-            if(grades[i] == 'A')
-                gpa += 4;
-            else if(grades[i] == 'B')
-                gpa += 3;
-            else if(grades[i] == 'C')
-                gpa += 2;
-            else if(grades[i] == 'D')
-                gpa += 1;
-            else if(grades[i] == 'F')
-                gpa += 0;
-            else {
+            if(grades[i] != 'A' && grades[i] != 'B' && grades[i] != 'C' && grades[i] != 'D' && grades[i] != 'F') {
                 System.out.println("A grade was entered incorrectly. Please restart the program and try again");
                 System.exit(0);
             }
+            if(grades[i] == 'A')
+                g += 4.0;
+            if(grades[i] == 'B')
+                g += 3.0;
+            if(grades[i] == 'C')
+                g += 2.0;
+            if(grades[i] == 'D')
+                g += 1.0;
         }
-        return gpa/grades.length;
+        return (g/grades.length);
     }
 
     //DO NOT CHANGE THIS
