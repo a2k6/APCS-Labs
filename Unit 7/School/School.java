@@ -196,6 +196,7 @@ public class School {
             for(int x = i; x < year1.size(); x++){
                 if(year1.get(i).getID() == year1.get(x).getID() && i != x){
                     year1.remove(x);
+                    x--;
                     count++;
                 }
             }
@@ -204,6 +205,7 @@ public class School {
             for(int x = i; x < year2.size(); x++){
                 if(year2.get(i).getID() == year2.get(x).getID() && i != x){
                     year2.remove(x);
+                    x--;
                     count++;
                 }
             }
@@ -212,6 +214,7 @@ public class School {
             for(int x = i; x < year3.size(); x++){
                 if(year3.get(i).getID() == year3.get(x).getID() && i != x){
                     year3.remove(x);
+                    x--;
                     count++;
                 }
             }
