@@ -79,22 +79,20 @@ public class School {
      * A return, the list representing the Dean's List is full of students with GPAs at or above 3.75,
      * alphabetized by last name, then first name.*/
     public ArrayList<Student> deansList() {
-        double gpa = 0;
         ArrayList<Student> deans = new ArrayList<>();
-        int totalSize = year1.size() + year2.size() + year3.size() + year4.size();
-        for(int i = 0; i > year1.size(); i++){
+        for(int i = 0; i < year1.size(); i++){
             if(year1.get(i).getGpa() >= 3.75)
                 deans.add(year1.get(i));
         }
-        for(int i = 0; i > year2.size(); i++){
+        for(int i = 0; i < year2.size(); i++){
             if(year2.get(i).getGpa() >= 3.75)
                 deans.add(year2.get(i));
         }
-        for(int i = 0; i > year3.size(); i++){
+        for(int i = 0; i < year3.size(); i++){
             if(year3.get(i).getGpa() >= 3.75)
                 deans.add(year3.get(i));
         }
-        for(int i = 0; i > year4.size(); i++){
+        for(int i = 0; i < year4.size(); i++){
             if(year4.get(i).getGpa() >= 3.75)
                 deans.add(year4.get(i));
         }
@@ -196,7 +194,7 @@ public class School {
         int count = 0;
         for(int i = 0; i < year1.size(); i++){
             for(int x = i; x < year1.size(); x++){
-                if(year1.get(i).getID() == year1.get(x).getID()){
+                if(year1.get(i).getID() == year1.get(x).getID() && i != x){
                     year1.remove(x);
                     count++;
                 }
@@ -204,7 +202,7 @@ public class School {
         }
         for(int i = 0; i < year2.size(); i++){
             for(int x = i; x < year2.size(); x++){
-                if(year2.get(i).getID() == year2.get(x).getID()){
+                if(year2.get(i).getID() == year2.get(x).getID() && i != x){
                     year2.remove(x);
                     count++;
                 }
@@ -212,7 +210,7 @@ public class School {
         }
         for(int i = 0; i < year3.size(); i++){
             for(int x = i; x < year3.size(); x++){
-                if(year3.get(i).getID() == year3.get(x).getID()){
+                if(year3.get(i).getID() == year3.get(x).getID() && i != x){
                     year3.remove(x);
                     count++;
                 }
@@ -220,7 +218,7 @@ public class School {
         }
         for(int i = 0; i < year4.size(); i++){
             for(int x = i; x < year4.size(); x++){
-                if(year4.get(i).getID() == year4.get(x).getID()){
+                if(year4.get(i).getID() == year4.get(x).getID() && i != x){
                     year4.remove(x);
                     count++;
                 }
