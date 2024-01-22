@@ -40,6 +40,5 @@ public class SchoolClient {
             System.out.println("Seniors: ");
             for(Student kid: senior)
                 System.out.println(kid);
-
     }
 }

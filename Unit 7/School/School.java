@@ -108,22 +108,22 @@ public class School {
         double avg = 0;
         int count = 0;
         for(int i = 0; i < year1.size(); i++) {
-            avg = year1.get(i).getGpa();
+            avg += year1.get(i).getGpa();
             count++;
         }
         for(int i = 0; i < year2.size(); i++) {
-            avg = year2.get(i).getGpa();
+            avg += year2.get(i).getGpa();
             count++;
         }
         for(int i = 0; i < year3.size(); i++) {
-            avg = year3.get(i).getGpa();
+            avg += year3.get(i).getGpa();
             count++;
         }
         for(int i = 0; i < year4.size(); i++) {
-            avg = year4.get(i).getGpa();
+            avg += year4.get(i).getGpa();
             count++;
         }
-        return avg;
+        return avg/count;
     }
 
     private void alphabetizeList(ArrayList<Student> list) {
@@ -200,7 +200,7 @@ public class School {
                 }
             }
         }
-        for(int i = 0; i < year2.size(); i++){
+        for(int i = 0; i < year2.size()-1; i++){
             for(int x = i; x < year2.size(); x++){
                 if(year2.get(i).getID() == year2.get(x).getID() && i != x){
                     year2.remove(x);
@@ -208,7 +208,7 @@ public class School {
                 }
             }
         }
-        for(int i = 0; i < year3.size(); i++){
+        for(int i = 0; i < year3.size()-1; i++){
             for(int x = i; x < year3.size(); x++){
                 if(year3.get(i).getID() == year3.get(x).getID() && i != x){
                     year3.remove(x);
@@ -216,10 +216,11 @@ public class School {
                 }
             }
         }
-        for(int i = 0; i < year4.size(); i++){
+        for(int i = 0; i < year4.size() - 1; i++){
             for(int x = i; x < year4.size(); x++){
                 if(year4.get(i).getID() == year4.get(x).getID() && i != x){
                     year4.remove(x);
+                    x--;
                     count++;
                 }
             }
