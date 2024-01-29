@@ -152,28 +152,23 @@ public class School {
      * Precondition: year1, year2, year3, and year4 are filled with Student objects.
      * Postcondition: year1, year2, year3, and year4 are unchanged.*/
     public Student findStudent(int id) {
-        boolean f = false;
         for(int i = 0; i < year1.size(); i++){
             if(year1.get(i).getID() == id) {
-                f = true;
                 return year1.get(i);
             }
         }
         for(int i = 0; i < year2.size(); i++){
             if(year2.get(i).getID() == id) {
-                f = true;
                 return year2.get(i);
             }
         }
         for(int i = 0; i < year3.size(); i++){
             if(year3.get(i).getID() == id) {
-                f = true;
                 return year3.get(i);
             }
         }
         for(int i = 0; i < year4.size(); i++){
             if(year4.get(i).getID() == id) {
-                f = true;
                 return year4.get(i);
             }
         }
