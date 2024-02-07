@@ -48,9 +48,9 @@ public class TicTacToe {
     private void display() {
         String l1 = "", l2 = "", l3 = "";
         for(int i = 0; i < 3; i++){
-            board[i][0] = l1;
-            board[i][1] = l2;
-            board[i][2] = l3;
+            l1 = board[i][0];
+            l2 = board[i][1];
+            l3 = board[i][2];
             System.out.println("|" + l1 + "|" + l2 + "|" + l3 + "|");
         }
     }
@@ -72,9 +72,9 @@ public class TicTacToe {
     public String horizontalWinner() {
         String l1 = "", l2 = "", l3 = "";
         for(int i = 0; i < 3; i++){
-            board[i][0] = l1;
-            board[i][1] = l2;
-            board[i][2] = l3;
+            l1 = board[i][0];
+            l2 = board[i][1];
+            l3 = board[i][2];
            if(l1.equals(l2) && l2.equals(l3) && l1.equalsIgnoreCase("x"))
                return player1;
            else if(l1.equals(l2) && l2.equals(l3) && l1.equalsIgnoreCase("o"))
@@ -91,9 +91,9 @@ public class TicTacToe {
     public String verticalWinner() {
         String l1 = "", l2 = "", l3 = "";
         for(int i = 0; i < 3; i++){
-            board[0][i] = l1;
-            board[1][i] = l2;
-            board[2][i] = l3;
+            l1 = board[0][i];
+            l2 = board[1][i];
+            l3 = board[2][i];
             if(l1.equals(l2) && l2.equals(l3) && l1.equalsIgnoreCase("x"))
                 return player1;
             else if(l1.equals(l2) && l2.equals(l3) && l1.equalsIgnoreCase("o"))
@@ -131,15 +131,21 @@ public class TicTacToe {
     If the board is not full and there is no winner, null is returned.
     board is unchanged.*/
     public String findWinner() {
+        boardFull = true;
+        for(int i = 0; i < board.length; i++){
+            for(int x = 0; x < board[0].length; x++){
+                if(board[i][x].equals(" "))
+                    boardFull = false;
+            }
+        }
         if(horizontalWinner() != null)
             return horizontalWinner() + " wins!";
         if(verticalWinner() != null)
             return verticalWinner() + " wins!";
         if(diagonalWinner() != null)
             return diagonalWinner() + " wins!";
-        if(boardFull && horizontalWinner().equals(null) && verticalWinner().equals(null) && diagonalWinner().equals(null))
+        if(boardFull && horizontalWinner() == null && verticalWinner() == null && diagonalWinner() == null)
             return "Tie game! Rerun to play again!";
-        display();
         return null;
     }
 
